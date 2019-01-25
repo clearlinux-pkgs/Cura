@@ -1,0 +1,13 @@
+# This file contains additional runtime requirements that did not get
+# picked up automatically. One name per line, no whitespace.
+CuraEngine
+Shapely-python3
+Uranium
+fdm_materials
+geos-lib
+libArcus-python3
+libCharon-python3
+libSavitar-python3
+numpy-stl
+pyserial-python3
+sip-python3
