@@ -1,1 +1,1 @@
--DCURA_VERSION=%{version}
+-DURANIUM_DIR=$PWD/../uranium
