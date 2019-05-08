@@ -4,10 +4,9 @@
 #
 Name     : Cura
 Version  : 4.0.0
-Release  : 6
+Release  : 8
 URL      : https://github.com/Ultimaker/Cura/archive/4.0.0.tar.gz
 Source0  : https://github.com/Ultimaker/Cura/archive/4.0.0.tar.gz
-Source1  : https://github.com/Ultimaker/Uranium/archive/3.1.0.tar.gz
 Summary  : No detailed summary available
 Group    : Development/Tools
 License  : LGPL-3.0 OFL-1.1
@@ -30,10 +29,7 @@ Requires: pyserial-python3
 Requires: sip-python3
 BuildRequires : Uranium-data
 BuildRequires : buildreq-cmake
-BuildRequires : doxygen
-BuildRequires : gettext-dev
 BuildRequires : python3
-BuildRequires : qttools-dev
 
 %description
 Cura
@@ -87,22 +83,17 @@ python3 components for the Cura package.
 
 %prep
 %setup -q -n Cura-4.0.0
-cd ..
-%setup -q -T -D -n Cura-4.0.0 -b 1
-mkdir -p uranium-translation-tool
-cp -r %{_topdir}/BUILD/Uranium-3.1.0/* %{_topdir}/BUILD/Cura-4.0.0/uranium-translation-tool
 
 %build
 export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C
-export SOURCE_DATE_EPOCH=1557354691
+export SOURCE_DATE_EPOCH=1557355879
 mkdir -p clr-build
 pushd clr-build
 export LDFLAGS="${LDFLAGS} -fno-lto"
-%cmake .. -DURANIUM_DIR=$PWD/../uranium \
--DCURA_SDK_VERSION:STRING=6.0.0 \
+%cmake .. -DCURA_SDK_VERSION:STRING=6.0.0 \
 -DCURA_CLOUD_API_ROOT:STRING=https://api.ultimaker.com \
 -DCURA_CLOUD_API_VERSION:STRING=1 \
 -DCURA_CLOUD_ACCOUNT_API_ROOT:STRING=https://account.ultimaker.com \
@@ -112,13 +103,12 @@ make  %{?_smp_mflags} VERBOSE=1
 popd
 
 %install
-export SOURCE_DATE_EPOCH=1557354691
+export SOURCE_DATE_EPOCH=1557355879
 rm -rf %{buildroot}
 mkdir -p %{buildroot}/usr/share/package-licenses/Cura
 cp LICENSE %{buildroot}/usr/share/package-licenses/Cura/LICENSE
 cp resources/themes/cura-light/fonts/noto-sans-display/LICENSE_OFL.txt %{buildroot}/usr/share/package-licenses/Cura/resources_themes_cura-light_fonts_noto-sans-display_LICENSE_OFL.txt
 cp resources/themes/cura-light/fonts/noto-sans/LICENSE_OFL.txt %{buildroot}/usr/share/package-licenses/Cura/resources_themes_cura-light_fonts_noto-sans_LICENSE_OFL.txt
-cp uranium-translation-tool/LICENSE %{buildroot}/usr/share/package-licenses/Cura/uranium-translation-tool_LICENSE
 pushd clr-build
 %make_install
 popd
@@ -1887,7 +1877,6 @@ for src in %{buildroot}/usr/lib64/python*/site-packages; do dest=$(sed 's!/usr/l
 /usr/share/package-licenses/Cura/LICENSE
 /usr/share/package-licenses/Cura/resources_themes_cura-light_fonts_noto-sans-display_LICENSE_OFL.txt
 /usr/share/package-licenses/Cura/resources_themes_cura-light_fonts_noto-sans_LICENSE_OFL.txt
-/usr/share/package-licenses/Cura/uranium-translation-tool_LICENSE
 
 %files python
 %defattr(-,root,root,-)
