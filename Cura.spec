@@ -4,7 +4,7 @@
 #
 Name     : Cura
 Version  : 4.0.0
-Release  : 5
+Release  : 6
 URL      : https://github.com/Ultimaker/Cura/archive/4.0.0.tar.gz
 Source0  : https://github.com/Ultimaker/Cura/archive/4.0.0.tar.gz
 Source1  : https://github.com/Ultimaker/Uranium/archive/3.1.0.tar.gz
@@ -90,23 +90,29 @@ python3 components for the Cura package.
 cd ..
 %setup -q -T -D -n Cura-4.0.0 -b 1
 mkdir -p uranium-translation-tool
-cp -rn %{_topdir}/BUILD/Uranium-3.1.0/* %{_topdir}/BUILD/Cura-4.0.0/uranium-translation-tool
+cp -r %{_topdir}/BUILD/Uranium-3.1.0/* %{_topdir}/BUILD/Cura-4.0.0/uranium-translation-tool
 
 %build
 export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C
-export SOURCE_DATE_EPOCH=1556924688
+export SOURCE_DATE_EPOCH=1557354691
 mkdir -p clr-build
 pushd clr-build
 export LDFLAGS="${LDFLAGS} -fno-lto"
-%cmake .. -DURANIUM_DIR=$PWD/../uranium
+%cmake .. -DURANIUM_DIR=$PWD/../uranium \
+-DCURA_SDK_VERSION:STRING=6.0.0 \
+-DCURA_CLOUD_API_ROOT:STRING=https://api.ultimaker.com \
+-DCURA_CLOUD_API_VERSION:STRING=1 \
+-DCURA_CLOUD_ACCOUNT_API_ROOT:STRING=https://account.ultimaker.com \
+-DCURA_BUILDTYPE=RPM \
+-DCURA_VERSION=%{version}-clearlinux
 make  %{?_smp_mflags} VERBOSE=1
 popd
 
 %install
-export SOURCE_DATE_EPOCH=1556924688
+export SOURCE_DATE_EPOCH=1557354691
 rm -rf %{buildroot}
 mkdir -p %{buildroot}/usr/share/package-licenses/Cura
 cp LICENSE %{buildroot}/usr/share/package-licenses/Cura/LICENSE
