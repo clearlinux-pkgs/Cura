@@ -4,7 +4,7 @@
 #
 Name     : Cura
 Version  : 4.2.1
-Release  : 11
+Release  : 12
 URL      : https://github.com/Ultimaker/Cura/archive/4.2.1/Cura-4.2.1.tar.gz
 Source0  : https://github.com/Ultimaker/Cura/archive/4.2.1/Cura-4.2.1.tar.gz
 Summary  : No detailed summary available
@@ -94,7 +94,7 @@ export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C.UTF-8
-export SOURCE_DATE_EPOCH=1565054269
+export SOURCE_DATE_EPOCH=1565056517
 mkdir -p clr-build
 pushd clr-build
 export GCC_IGNORE_WERROR=1
@@ -112,7 +112,7 @@ make  %{?_smp_mflags} VERBOSE=1
 popd
 
 %install
-export SOURCE_DATE_EPOCH=1565054269
+export SOURCE_DATE_EPOCH=1565056517
 rm -rf %{buildroot}
 mkdir -p %{buildroot}/usr/share/package-licenses/Cura
 cp LICENSE %{buildroot}/usr/share/package-licenses/Cura/LICENSE
