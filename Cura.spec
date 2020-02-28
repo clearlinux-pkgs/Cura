@@ -4,10 +4,10 @@
 #
 Name     : Cura
 Version  : 4.5.0
-Release  : 18
+Release  : 19
 URL      : https://github.com/Ultimaker/Cura/archive/4.5.0/Cura-4.5.0.tar.gz
 Source0  : https://github.com/Ultimaker/Cura/archive/4.5.0/Cura-4.5.0.tar.gz
-Summary  : No detailed summary available
+Summary  : A software solution for 3D printing aimed at RepRaps and the Ultimaker.
 Group    : Development/Tools
 License  : LGPL-3.0 OFL-1.1
 Requires: Cura-bin = %{version}-%{release}
@@ -94,9 +94,10 @@ export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C.UTF-8
-export SOURCE_DATE_EPOCH=1582746830
+export SOURCE_DATE_EPOCH=1582914742
 mkdir -p clr-build
 pushd clr-build
+# -Werror is for werrorists
 export GCC_IGNORE_WERROR=1
 export CFLAGS="$CFLAGS -fno-lto "
 export FCFLAGS="$CFLAGS -fno-lto "
@@ -112,7 +113,7 @@ make  %{?_smp_mflags}  VERBOSE=1
 popd
 
 %install
-export SOURCE_DATE_EPOCH=1582746830
+export SOURCE_DATE_EPOCH=1582914742
 rm -rf %{buildroot}
 mkdir -p %{buildroot}/usr/share/package-licenses/Cura
 cp %{_builddir}/Cura-4.5.0/LICENSE %{buildroot}/usr/share/package-licenses/Cura/2fa84abcb9ebd82e02a9ba263551d24b04e8c691
