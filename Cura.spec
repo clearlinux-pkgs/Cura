@@ -4,7 +4,7 @@
 #
 Name     : Cura
 Version  : 4.6.1
-Release  : 21
+Release  : 22
 URL      : https://github.com/Ultimaker/Cura/archive/4.6.1/Cura-4.6.1.tar.gz
 Source0  : https://github.com/Ultimaker/Cura/archive/4.6.1/Cura-4.6.1.tar.gz
 Summary  : No detailed summary available
@@ -48,7 +48,6 @@ Requires: requests
 Requires: scipy
 Requires: sip-python3
 Requires: six
-Requires: typing
 Requires: urllib3
 Requires: zeroconf
 BuildRequires : CuraEngine
@@ -80,7 +79,6 @@ BuildRequires : python3-dev
 BuildRequires : requests
 BuildRequires : scipy
 BuildRequires : six
-BuildRequires : typing
 BuildRequires : urllib3
 BuildRequires : zeroconf
 
@@ -142,7 +140,7 @@ export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C.UTF-8
-export SOURCE_DATE_EPOCH=1588206584
+export SOURCE_DATE_EPOCH=1588359652
 mkdir -p clr-build
 pushd clr-build
 export GCC_IGNORE_WERROR=1
@@ -160,7 +158,7 @@ make  %{?_smp_mflags}  VERBOSE=1
 popd
 
 %install
-export SOURCE_DATE_EPOCH=1588206584
+export SOURCE_DATE_EPOCH=1588359652
 rm -rf %{buildroot}
 mkdir -p %{buildroot}/usr/share/package-licenses/Cura
 cp %{_builddir}/Cura-4.6.1/LICENSE %{buildroot}/usr/share/package-licenses/Cura/2fa84abcb9ebd82e02a9ba263551d24b04e8c691
