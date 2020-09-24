@@ -4,7 +4,7 @@
 #
 Name     : Cura
 Version  : 4.7.1
-Release  : 25
+Release  : 26
 URL      : https://github.com/Ultimaker/Cura/archive/4.7.1/Cura-4.7.1.tar.gz
 Source0  : https://github.com/Ultimaker/Cura/archive/4.7.1/Cura-4.7.1.tar.gz
 Summary  : No detailed summary available
