@@ -4,7 +4,7 @@
 #
 Name     : Cura
 Version  : 4.8
-Release  : 27
+Release  : 28
 URL      : https://github.com/Ultimaker/Cura/archive/4.8/Cura-4.8.tar.gz
 Source0  : https://github.com/Ultimaker/Cura/archive/4.8/Cura-4.8.tar.gz
 Summary  : No detailed summary available
