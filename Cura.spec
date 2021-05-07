@@ -4,7 +4,7 @@
 #
 Name     : Cura
 Version  : 4.9.0
-Release  : 33
+Release  : 34
 URL      : https://github.com/Ultimaker/Cura/archive/4.9.0/Cura-4.9.0.tar.gz
 Source0  : https://github.com/Ultimaker/Cura/archive/4.9.0/Cura-4.9.0.tar.gz
 Summary  : No detailed summary available
