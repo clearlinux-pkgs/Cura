@@ -2,7 +2,7 @@
 # picked up automatically. One name per line, no whitespace.
 CuraEngine
 PyQt5
-Shapely-python3
+pypi(shapely)
 Uranium
 fdm_materials
 geos-lib
