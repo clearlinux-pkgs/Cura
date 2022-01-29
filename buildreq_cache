@@ -1,4 +1,4 @@
-4.12.1
+4.13.1
 pypi(appdirs)
 pypi(certifi)
 pypi(cffi)
@@ -20,12 +20,9 @@ pypi(packaging)
 pypi(pycollada)
 pypi(pycparser)
 pypi(pyparsing)
-pypi(pyqt5)
-pypi(pyqt5_sip)
 pypi(pyserial)
 pypi(python_dateutil)
 pypi(python_utils)
-pypi(pywin32)
 pypi(requests)
 pypi(scipy)
 pypi(sentry_sdk)
