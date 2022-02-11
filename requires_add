@@ -2,7 +2,6 @@
 # picked up automatically. One name per line, no whitespace.
 CuraEngine
 PyQt5
-pypi(shapely)
 Uranium
 fdm_materials
 geos-lib
@@ -10,5 +9,7 @@ libArcus-python3
 libCharon-python3
 libSavitar-python3
 numpy-stl
+pypi(sentry_sdk)
+pypi(shapely)
 pyserial-python3
 sip-python3

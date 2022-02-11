@@ -4,7 +4,7 @@
 #
 Name     : Cura
 Version  : 4.13.1
-Release  : 43
+Release  : 44
 URL      : https://github.com/Ultimaker/Cura/archive/4.13.1/Cura-4.13.1.tar.gz
 Source0  : https://github.com/Ultimaker/Cura/archive/4.13.1/Cura-4.13.1.tar.gz
 Summary  : No detailed summary available
@@ -24,6 +24,7 @@ Requires: libArcus-python3
 Requires: libCharon-python3
 Requires: libSavitar-python3
 Requires: numpy-stl
+Requires: pypi(sentry_sdk)
 Requires: pypi(shapely)
 Requires: pyserial-python3
 Requires: sip-python3
@@ -118,7 +119,7 @@ export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C.UTF-8
-export SOURCE_DATE_EPOCH=1644434255
+export SOURCE_DATE_EPOCH=1644544168
 mkdir -p clr-build
 pushd clr-build
 export GCC_IGNORE_WERROR=1
@@ -136,7 +137,7 @@ make  %{?_smp_mflags}
 popd
 
 %install
-export SOURCE_DATE_EPOCH=1644434255
+export SOURCE_DATE_EPOCH=1644544168
 rm -rf %{buildroot}
 mkdir -p %{buildroot}/usr/share/package-licenses/Cura
 cp %{_builddir}/Cura-4.13.1/LICENSE %{buildroot}/usr/share/package-licenses/Cura/2fa84abcb9ebd82e02a9ba263551d24b04e8c691
