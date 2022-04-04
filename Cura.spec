@@ -4,7 +4,7 @@
 #
 Name     : Cura
 Version  : 4.13.1
-Release  : 44
+Release  : 45
 URL      : https://github.com/Ultimaker/Cura/archive/4.13.1/Cura-4.13.1.tar.gz
 Source0  : https://github.com/Ultimaker/Cura/archive/4.13.1/Cura-4.13.1.tar.gz
 Summary  : No detailed summary available
@@ -119,7 +119,7 @@ export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C.UTF-8
-export SOURCE_DATE_EPOCH=1644544168
+export SOURCE_DATE_EPOCH=1649050277
 mkdir -p clr-build
 pushd clr-build
 export GCC_IGNORE_WERROR=1
@@ -127,7 +127,8 @@ export CFLAGS="$CFLAGS -fno-lto "
 export FCFLAGS="$FFLAGS -fno-lto "
 export FFLAGS="$FFLAGS -fno-lto "
 export CXXFLAGS="$CXXFLAGS -fno-lto "
-%cmake .. -DCURA_SDK_VERSION:STRING=6.0.0 \
+%cmake .. -DCMAKE_MODULE_PATH=/usr/share/cmake/Modules \
+-DCURA_SDK_VERSION:STRING=6.0.0 \
 -DCURA_CLOUD_API_ROOT:STRING=https://api.ultimaker.com \
 -DCURA_CLOUD_API_VERSION:STRING=1 \
 -DCURA_CLOUD_ACCOUNT_API_ROOT:STRING=https://account.ultimaker.com \
@@ -137,7 +138,7 @@ make  %{?_smp_mflags}
 popd
 
 %install
-export SOURCE_DATE_EPOCH=1644544168
+export SOURCE_DATE_EPOCH=1649050277
 rm -rf %{buildroot}
 mkdir -p %{buildroot}/usr/share/package-licenses/Cura
 cp %{_builddir}/Cura-4.13.1/LICENSE %{buildroot}/usr/share/package-licenses/Cura/2fa84abcb9ebd82e02a9ba263551d24b04e8c691
