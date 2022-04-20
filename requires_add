@@ -11,5 +11,5 @@ libSavitar-python3
 numpy-stl
 pypi(sentry_sdk)
 pypi(shapely)
-pyserial-python3
+pypi(pyserial)
 sip-python3
