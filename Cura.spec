@@ -4,7 +4,7 @@
 #
 Name     : Cura
 Version  : 4.13.1
-Release  : 46
+Release  : 47
 URL      : https://github.com/Ultimaker/Cura/archive/4.13.1/Cura-4.13.1.tar.gz
 Source0  : https://github.com/Ultimaker/Cura/archive/4.13.1/Cura-4.13.1.tar.gz
 Summary  : No detailed summary available
@@ -105,6 +105,33 @@ python components for the Cura package.
 Summary: python3 components for the Cura package.
 Group: Default
 Requires: python3-core
+Requires: pypi(appdirs)
+Requires: pypi(certifi)
+Requires: pypi(cffi)
+Requires: pypi(chardet)
+Requires: pypi(colorlog)
+Requires: pypi(comtypes)
+Requires: pypi(cryptography)
+Requires: pypi(decorator)
+Requires: pypi(idna)
+Requires: pypi(importlib_metadata)
+Requires: pypi(keyring)
+Requires: pypi(lxml)
+Requires: pypi(mypy)
+Requires: pypi(netifaces)
+Requires: pypi(networkx)
+Requires: pypi(numpy)
+Requires: pypi(numpy_stl)
+Requires: pypi(packaging)
+Requires: pypi(pycollada)
+Requires: pypi(pycparser)
+Requires: pypi(pyparsing)
+Requires: pypi(pyserial)
+Requires: pypi(python_dateutil)
+Requires: pypi(python_utils)
+Requires: pypi(requests)
+Requires: pypi(scipy)
+Requires: pypi(sentry_sdk)
 
 %description python3
 python3 components for the Cura package.
@@ -119,7 +146,7 @@ export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C.UTF-8
-export SOURCE_DATE_EPOCH=1650498506
+export SOURCE_DATE_EPOCH=1652721592
 mkdir -p clr-build
 pushd clr-build
 export GCC_IGNORE_WERROR=1
@@ -138,7 +165,7 @@ make  %{?_smp_mflags}
 popd
 
 %install
-export SOURCE_DATE_EPOCH=1650498506
+export SOURCE_DATE_EPOCH=1652721592
 rm -rf %{buildroot}
 mkdir -p %{buildroot}/usr/share/package-licenses/Cura
 cp %{_builddir}/Cura-4.13.1/LICENSE %{buildroot}/usr/share/package-licenses/Cura/2fa84abcb9ebd82e02a9ba263551d24b04e8c691
