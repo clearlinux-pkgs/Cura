@@ -1,5 +1,6 @@
 # This file contains build requirements that get picked up but are
 # undesirable. One entry per line, no whitespace.
+pypi(comtypes)
 pypi(pyqt5)
 pypi(pyqt5_sip)
 pypi(pywin32)
