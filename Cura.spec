@@ -4,7 +4,7 @@
 #
 Name     : Cura
 Version  : 4.13.1
-Release  : 48
+Release  : 49
 URL      : https://github.com/Ultimaker/Cura/archive/4.13.1/Cura-4.13.1.tar.gz
 Source0  : https://github.com/Ultimaker/Cura/archive/4.13.1/Cura-4.13.1.tar.gz
 Summary  : No detailed summary available
